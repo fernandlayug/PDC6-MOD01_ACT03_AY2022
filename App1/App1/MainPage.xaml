@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+                <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+               
+        </Label>
+        <Button Text="Submit">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="BackgroundColor" Value=" Blue"/>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+         </Button.Resources>
+        </Button>
+        
+        <Grid>
+            <Grid.Resources>
+                <Style x:Key="SubmitButton" TargetType="Button">
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="BackgroundColor" Value=" DarkGreen"/>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+
+                <Style x:Key="WarningButton" TargetType="Button">
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="BackgroundColor" Value=" Red"/>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Text="Page 1"  Style = "{StaticResource SubmitButton}" Grid.Row="0" Clicked="OpenPage1"/>
+            <Button Text="Page 2" Style="{StaticResource WarningButton}" Grid.Row="1" Clicked="OpenPage2"/>
+        </Grid>
+        
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Text="Submit"  Grid.Row="0"/>
+            <Button Text="Warning" Grid.Row="1"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
